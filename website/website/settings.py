@@ -54,10 +54,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # other lib
-    # "debug_toolbar",
-    'rest_framework',
-
     # apps
     "account.apps.AccountConfig",
     "cart.apps.CartConfig",
@@ -66,6 +62,7 @@ INSTALLED_APPS = [
     "order.apps.OrderConfig",
     "viewed.apps.ViewedConfig",
 
+    # other lib
     "rest_framework",
     "debug_toolbar",
 
@@ -175,7 +172,7 @@ EMAIL_HOST_PASSWORD = str(os.getenv("EMAIL_PASSWORD"))
 
 CART_SESSION_ID = 'cart'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Время жизни сессии (2 недели)
 SESSION_COOKIE_AGE = 1209600
